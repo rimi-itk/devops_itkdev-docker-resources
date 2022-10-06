@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -o errexit -o errtrace -o noclobber -o nounset -o pipefail
+IFS=$'\n\t'
+
+dir=$(cd "$(dirname "${BASH_SOURCE[0]}")"/../ && pwd)
+
+function update_ssh_config_file() {
+    echo "@todo"
+    exit
+}
+
+function ssh_config_file_help() {
+            cat <<EOF
+Add this line to the top of your ~/.ssh/config file:
+
+Include ${dir}/ssh/config.d/*
+
+See "Include" in https://man7.org/linux/man-pages/man5/ssh_config.5.html for details.
+
+Run $0 --do-it to do it automatically
+
+EOF
+            exit
+}
+
+for var in "$@"
+do
+    case "$var" in
+        --do-it)
+            update_ssh_config_file
+            ;;
+        *)
+            ;;
+    esac
+done
+
+ssh_config_file_help
