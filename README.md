@@ -11,6 +11,6 @@ Development servers and can be included in your
 (see “Include” in <https://man7.org/linux/man-pages/man5/ssh_config.5.html> for
 details).
 
-Run `./bin/ssh-config-helper`(./bin/ssh-config-helper) to get started.
+Run [`./bin/ssh-config-helper`](./bin/ssh-config-helper) to get started.
 
 **Note**: Your ssh version (`ssh -V`) must be `7.3p1` or newer for this to work.
